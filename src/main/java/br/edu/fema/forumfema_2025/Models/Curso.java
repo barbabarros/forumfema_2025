@@ -1,16 +1,23 @@
 package br.edu.fema.forumfema_2025.Models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "cursos")
 public class Curso {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String categoria;
+
     public Curso() {
     }
+    
     public Curso(Long id, String nome, String categoria) {
         this.id = id;
         this.nome = nome;
